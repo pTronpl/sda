@@ -25,7 +25,8 @@ Bonus points:
 	
 	
 	public static <T> T[] swap(T[] tab, int first, int second) {
-		if (!(first<tab.length) || !(second<tab.length) ) return tab;
+		int tabLength = tab.length;
+		if (!(first<tabLength) || first<0 || !(second<tab.length)|| second <0 ) return tab;
 		System.out.println("Metoda <T> T[] swap(T[] tab, int first, int second)");
 		T element = tab[first];
 		tab[first] = tab[second];
@@ -34,7 +35,8 @@ Bonus points:
 	}
 	
 	public static <T extends Number> T[] swapNumber(T[] tab, int first, int second) {
-		if (!(first<tab.length) || !(second<tab.length) ) return tab;
+		int tabLength = tab.length;
+		if (!(first<tabLength) || first<0 || !(second<tab.length)|| second <0 ) return tab;
 		System.out.println("Metoda <T extends Number> T[] swap(T[] tab, int first, int second");
 		T element = tab[first];
 		tab[first] = tab[second];
