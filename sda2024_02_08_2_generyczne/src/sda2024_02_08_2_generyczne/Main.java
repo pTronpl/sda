@@ -16,7 +16,7 @@ Bonus points:
 - napisz drugą metodę która robi to samo ale tylko dla obiektów numerycznych tzn. Integer, Long, Double, Float
 		 */
 		Integer[] iTab = {1,2,3,4,5,6};
-		iTab = swap(iTab, 0, 3);
+		iTab = swapNumber(iTab, 0, 3);
 		printTab(iTab);
 		System.out.println("---------------------------------------");
 		String[] sTab = {"a", "bb", "ccc", "dddd", "e", "ff"};
@@ -25,6 +25,7 @@ Bonus points:
 	
 	
 	public static <T> T[] swap(T[] tab, int first, int second) {
+		if (!(first<tab.length) || !(second<tab.length) ) return tab;
 		System.out.println("Metoda <T> T[] swap(T[] tab, int first, int second)");
 		T element = tab[first];
 		tab[first] = tab[second];
@@ -32,7 +33,8 @@ Bonus points:
 		return tab;
 	}
 	
-public static <T extends Number> T[] swap(T[] tab, int first, int second) {
+	public static <T extends Number> T[] swapNumber(T[] tab, int first, int second) {
+		if (!(first<tab.length) || !(second<tab.length) ) return tab;
 		System.out.println("Metoda <T extends Number> T[] swap(T[] tab, int first, int second");
 		T element = tab[first];
 		tab[first] = tab[second];
