@@ -20,7 +20,7 @@ public class Main {
 		List<String> unique = gen.uniqeList(list);
 		
 		for (String element : unique) {
-			System.out.println(element);
+			System.out.println(element.getClass().getSimpleName() +" " + element);
 		}
 		Integer[] integers = { 1,2,3,2,3,5,5,5,5,9,0,-1,-1};
 		List<Integer> doubleList = new ArrayList<>(Arrays.asList(integers));
@@ -29,7 +29,7 @@ public class Main {
 		List<Integer> uniqueInt = genInt.uniqeList(doubleList);
 		
 		for (Integer element : uniqueInt) {
-			System.out.println(element);
+			System.out.println(element.getClass().getSimpleName() +" " + element);
 		}
 
 	}
