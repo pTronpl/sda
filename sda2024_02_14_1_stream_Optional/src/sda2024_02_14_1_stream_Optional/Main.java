@@ -112,9 +112,12 @@ Wypisz imiona pracowników którzy mają parzyste id a następnie zwróć Listę
 		//		Zwrócenie nazwy działu pracownika o imieniu X.
 		System.out.println("----------------------------------------");
 		String nazwaDzialu = listaPracownikow.stream()
-			.filter(e-> (e.getImie().equals("Jan")))
+			.filter(e-> (e.getImie().equals("x")))
+			.findFirst()
 			.map(Pracownik::getDzial)
-			.findFirst().get().toString();
+			.map(Object::toString)
+			.orElse("nie znaleziono")
+			;
 			
 		System.out.println("Nazwa Dzialu: " + nazwaDzialu);
 
