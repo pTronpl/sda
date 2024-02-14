@@ -33,7 +33,7 @@ Wypisz imiona pracowników którzy mają parzyste id a następnie zwróć Listę
 		
 		
 		List<Pracownik> listaPracownikow = List.of(
-				new Pracownik(1, "Jan", "Kowalski", 25, Dzial.HR, new BigDecimal(5000)),
+				new Pracownik(1, "Jan", "Kowalski", 25, Dzial.HR, new BigDecimal(15000)),
 				new Pracownik(2, "Adam", "Kowalski", 25, Dzial.IT, new BigDecimal(8000)),
 				new Pracownik(3, "Jan", "Zielinski", 30, Dzial.SALES, new BigDecimal(11000)),
 				new Pracownik(4, "Anna", "Kowalska", 23, Dzial.IT, new BigDecimal(12000)),
@@ -63,8 +63,12 @@ Wypisz imiona pracowników którzy mają parzyste id a następnie zwróć Listę
 		
 		// Znalezienie pierwszego pracownika z działu IT, który ma pensję powyżej 7000.
 		System.out.println("----------------------------------------");
-		Pracownik pIT = listaPracownikow.stream().filter(e-> e.getDzial()==Dzial.IT).findFirst().get();
-		System.out.println(pIT.toString());
+		Pracownik pIT = listaPracownikow.stream()
+				.filter(e-> e.getDzial()==Dzial.IT && e.getPensja().doubleValue()>7000)
+				.findFirst().get();
+		System.out.println(pIT!=null?pIT.toString():"nie znaleziono");
+		
+
 		
 		//Obliczenie średniej pensji pracowników w dziale Sales.
 		System.out.println("----------------------------------------");
@@ -88,6 +92,7 @@ Wypisz imiona pracowników którzy mają parzyste id a następnie zwróć Listę
 		System.out.println("----------------------------------------");
 		long pracownicyHR = listaPracownikow.stream()
 		.filter(e -> (e.getDzial() == Dzial.HR))
+		.map(Pracownik::getImie)
 		.distinct()
 		.count();
 		System.out.println("pracownicyHR: " + pracownicyHR);
