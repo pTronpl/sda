@@ -12,11 +12,14 @@ public class Main {
     	Path path = Path.of("zad_1_NIO.txt");
     	Files.deleteIfExists(path);
     	Files.createFile(path);
+    	StringBuilder sb = new StringBuilder("");
     	//IntStream randStream = random.ints(500, 999, 999999);
     	new Random().ints(500, 999, 1000000)
     	.forEach(t -> {
-			writeToFile(path, t);
+    		sb.append("" + t+"\n");
+//			writeToFile(path, t);
 		});
+    	writeToFile(path,sb);
     	//-------------------------------------------------
     	Path pathResult = Path.of("zad_1_NIO_res.txt");
     	Files.deleteIfExists(pathResult);
@@ -43,6 +46,16 @@ public class Main {
 //
 //        Files.readAllLines(Path.of("resources/jakis.txxt")).forEach(System.out::println); // wypisuje zawartość innego pliku
     }
+
+	private static void writeToFile(Path path, StringBuilder sb) {
+		try {
+			Files.write(path, (sb.toString()).getBytes(), StandardOpenOption.APPEND);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+	}
 
 	/**
 	 * @param path
