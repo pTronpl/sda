@@ -11,6 +11,9 @@ public class Main {
 
 		System.out.println(shs.contains("aaa"));		// contains
 		System.out.println(shs.contains("bbb"));
+		for (String string : shs) {
+			System.out.println(string);
+		}
 		System.out.println("-------------------");
 		System.out.println(shs.size());					// size
 		System.out.println("-------------------");
@@ -20,6 +23,10 @@ public class Main {
 		System.out.println("-------------------");
 		shs.clear();									// clear
 		System.out.println(shs.size());
+		
+		for (String string : shs) {
+			System.out.println(string);
+		}
 		
 
 	}

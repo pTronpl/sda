@@ -37,7 +37,8 @@ public class SDAHashSet<V> implements Iterable<V> {
 
 	@Override
 	public Iterator<V> iterator() {
-		return new CustomIterator(this);
+		return this.map.keySet().iterator();
+//		return new CustomIterator(this);
 	}
 	
 //	add
