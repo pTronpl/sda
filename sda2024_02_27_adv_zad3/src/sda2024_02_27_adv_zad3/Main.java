@@ -34,11 +34,18 @@ Napisz aby metoda działała niezależnie od typów w Mapie.
 	public <K,V> void getMapValues(Map<K,V> map) {
 		StringBuffer sb = new StringBuffer();
 		for (Entry<K, V> element : map.entrySet()) {
-			sb.append("Klucz: ").append(element.getKey().toString()).append(", Wartosc: ").append(element.getValue().toString()).append(",\n");
+			sb
+				.append("Klucz: ")
+				.append(element.getKey().toString())
+				.append(", Wartosc: ")
+				.append(element.getValue().toString())
+				.append(",\n");
 		}
 		
 		String res = sb.toString();
-		res = res.substring(0, res.length() - 2);
+		res = res.substring(0, res.length() - 2)+".";
 		System.out.println(res);
+		
+
 	}
 }
