@@ -18,20 +18,21 @@ public class Storage<K,V> {
 	}
 
 	public Map<K,List<V>> addToStorage(K key, V value) {
-		
-		if(this.map.containsKey(key)) {
-			this.map.get(key).add(value);
-		} else {
-			List<V> list = new ArrayList<V>();
-			list.add(value);
-			this.map.put(key, list);
-		}
+		this.map.computeIfAbsent(key, k -> new ArrayList<>()).add(value);
+//		if(this.map.containsKey(key)) {
+//			this.map.get(key).add(value);
+//		} else {
+//			List<V> list = new ArrayList<V>();
+//			list.add(value);
+//			this.map.put(key, list);
+//		}
 		
 		return this.map;
 	}
 	
 	public void printValues(K key) {
-		if (key != null) {
+		if (this.map != null && key != null) {
+//			System.out.println("Values: " + this.map.get(key));
 			for (V value : this.map.get(key)) {
 				System.out.println(value);
 			}	

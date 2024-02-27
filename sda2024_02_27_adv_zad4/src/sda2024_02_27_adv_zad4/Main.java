@@ -20,8 +20,10 @@ Napisz rozwiązanie aby przyjmowało dowolny typ generyczny zamiast String key i
 		st.addToStorage(1, "bbb");
 		st.addToStorage(3, "aaa");
 		st.addToStorage(3, "aaa");
+		st.addToStorage(null, null);
 		
 		st.printValues(1);
+		st.printValues(null);
 		
 		for (Integer i : st.findKeysByValue("aaa")) {
 			System.out.println(i);
