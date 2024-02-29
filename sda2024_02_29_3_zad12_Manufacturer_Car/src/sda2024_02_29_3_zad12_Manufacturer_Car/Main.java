@@ -37,16 +37,30 @@ zwracanie listy aut wyprodukowanych przez producenta z rokiem założenia <,>,<=
 		Car c = new Car("Mazda", "CX-5", 170000.0f, 2024, List.of(new Manufacturer("Mazda", 1956, "JPN")), EngineType.H3);
 //		System.out.println(c.toString());
 		
+		Manufacturer toyota = new Manufacturer("Toyota", 1949, "JPN");
+		
 		CarService cs = new CarService();
 		cs.addCar(c);
 		
-		Car c1 = new Car("Jaguar", "XF", 370000.0f, 2024, List.of(new Manufacturer("Jaguar", 1934, "GB")), EngineType.V12);
+		Car c1 = new Car("Toyota", "Toyota", 298000.0f, 2024, List.of(toyota), EngineType.H3);
 		cs.addCar(c1);
+		
+		Car c2 = new Car("Jaguar", "XF", 370000.0f, 2024, List.of(new Manufacturer("Jaguar", 1934, "GB")), EngineType.V12);
+		cs.addCar(c2);
+		
+		Car c3 = new Car("Toyota", "Toyota", 165000.0f, 2015, List.of(toyota), EngineType.S3);
+		cs.addCar(c3);
+		
 		
 		System.out.println("H3 engine:  " + cs.getCarByEngine(EngineType.H3).toString());
 		
 		System.out.println("The cheapest: " + cs.getCheapestCar().toString());
 		System.out.println("The most expensive: " + cs.getexpensiveCar().toString());
+		
+		System.out.println("Najtrudniejsze sprawdzenie: toyota < 2020 : \n" 
+					+ cs.getCarListByManufacturer(toyota, "<", 2020));
+		
+		
 		
 		// pozostałe metody do sprawdzenia
 	}
