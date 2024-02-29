@@ -59,7 +59,8 @@ zwracanie listy aut wyprodukowanych przez producenta z rokiem założenia <,>,<=
 		
 		System.out.println("Najtrudniejsze sprawdzenie: toyota < 2020 : \n" 
 					+ cs.getCarListByManufacturer(toyota, "<", 2020));
-		
+		System.out.println("Najtrudniejsze sprawdzenie: toyota >= 2020 : \n" 
+				+ cs.getCarListByManufacturer(toyota, ">=", 2020));
 		
 		
 		// pozostałe metody do sprawdzenia
