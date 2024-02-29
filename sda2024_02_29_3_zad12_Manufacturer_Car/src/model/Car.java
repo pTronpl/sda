@@ -9,17 +9,17 @@ public class Car {
 	private String name;
 	private String model;
 	private float price;
-	private int maufactureYear;
+	private int manufactureYear;
 	private List<Manufacturer> manufacturerList;
 	private EngineType engine;
 	
-	public Car(String name, String model, float price, int maufactureYear, List<Manufacturer> manufacturerList,
+	public Car(String name, String model, float price, int manufactureYear, List<Manufacturer> manufacturerList,
 			EngineType engine) {
 		super();
 		this.name = name;
 		this.model = model;
 		this.price = price;
-		this.maufactureYear = maufactureYear;
+		this.manufactureYear = manufactureYear;
 		this.manufacturerList = manufacturerList;
 		this.engine = engine;
 	}
@@ -67,17 +67,17 @@ public class Car {
 	}
 
 	/**
-	 * @return the maufactureYear
+	 * @return the manufactureYear
 	 */
-	public int getMaufactureYear() {
-		return maufactureYear;
+	public int getManufactureYear() {
+		return manufactureYear;
 	}
 
 	/**
-	 * @param maufactureYear the maufactureYear to set
+	 * @param manufactureYear the maufactureYear to set
 	 */
-	public void setMaufactureYear(int maufactureYear) {
-		this.maufactureYear = maufactureYear;
+	public void setManufactureYear(int manufactureYear) {
+		this.manufactureYear = manufactureYear;
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class Car {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(engine, manufacturerList, maufactureYear, model, name, price);
+		return Objects.hash(engine, manufacturerList, manufactureYear, model, name, price);
 	}
 
 	@Override
@@ -121,13 +121,13 @@ public class Car {
 			return false;
 		Car other = (Car) obj;
 		return engine == other.engine && Objects.equals(manufacturerList, other.manufacturerList)
-				&& maufactureYear == other.maufactureYear && Objects.equals(model, other.model)
+				&& manufactureYear == other.manufactureYear && Objects.equals(model, other.model)
 				&& Objects.equals(name, other.name) && Float.floatToIntBits(price) == Float.floatToIntBits(other.price);
 	}
 
 	@Override
 	public String toString() {
-		return "Car [name=" + name + ", model=" + model + ", price=" + price + ", maufactureYear=" + maufactureYear
+		return "Car [name=" + name + ", model=" + model + ", price=" + price + ", maufactureYear=" + manufactureYear
 				+ ", manufacturerList=" + manufacturerList + ", engine=" + engine+"/"+engine.getFuelType() + "]";
 	}
 	
