@@ -17,8 +17,8 @@ public class Results {
 	/**
 	 * @param wynik the wynik to set
 	 */
-	public static void setResult(AtomicInteger res) {
-		result = res;
+	public static void setResult(int res) {
+		result.addAndGet(res);
 	}
 	
 	
