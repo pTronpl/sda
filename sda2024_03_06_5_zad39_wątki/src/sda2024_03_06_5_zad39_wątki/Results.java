@@ -10,8 +10,8 @@ public class Results {
 	/**
 	 * @return the wynik
 	 */
-	public static AtomicInteger getResult() {
-		return result;
+	public static int getResult() {
+		return result.get();
 	}
 
 	/**
