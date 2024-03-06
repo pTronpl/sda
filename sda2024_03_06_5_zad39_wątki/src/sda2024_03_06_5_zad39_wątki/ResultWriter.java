@@ -7,7 +7,7 @@ public class ResultWriter implements Runnable{
 
 		@Override
 		public void run() {
-			Results.setResult(new AtomicInteger(new Random().nextInt(1,6)));
+			Results.setResult(new Random().nextInt(1,6));
 			
 		}
 }
